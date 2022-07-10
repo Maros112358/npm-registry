@@ -7,4 +7,5 @@ add_executable(
     npm-registry
     src/main.cpp
     src/server.cpp
+    src/sockets/http_socket.cpp
 )

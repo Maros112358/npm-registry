@@ -6,7 +6,7 @@
 
 using namespace std;
 
-vector<string> split(string str, string delimiter)
+static vector<string> split(string str, string delimiter)
 {
     vector<string> strings;
  

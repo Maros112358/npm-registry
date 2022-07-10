@@ -1,5 +1,5 @@
-#ifndef _ROUTER_
-#define _ROUTER_
+#ifndef _SOCKET_
+#define _SOCKET_
 
 #include <sys/socket.h>
 #include <map>
@@ -19,6 +19,12 @@ class Socket {
             return readChar[0];
         }
 
+        string getChars(int char_count) {
+            char buffer[char_count];
+            recv(this->socket_fd, &buffer, sizeof(buffer), 0);
+            return string(buffer);
+        }
+
         string getLine(void) {
             string r = "";
             char c;
@@ -30,6 +36,10 @@ class Socket {
             }
 
             return r;
+        }
+
+        int getSocket(void) {
+            return this -> socket_fd;
         }
     private:
         int socket_fd;
